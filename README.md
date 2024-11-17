@@ -29,6 +29,8 @@ python crpr.py
    - Press 'c' to crop
    - Press 'r' to reset selection
    - Press 'ESC' to cancel
+  
+Hint: Before interacting with the UI, make sure the window is in focus (click on it)
 
 ## Output
 - Cropped video saved as MP4
