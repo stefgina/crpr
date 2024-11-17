@@ -1,6 +1,9 @@
 # crpr ✂️
 A minimal img/video cropping tool with a retro terminal aesthetic. 
-![crpr|200x200](path/to/image.png)
+
+<img src="crpr.png" height="300" alt="crpr screenshot"/>
+
+
 
 ## Features
 - Interactive crop selection with resize handles
