@@ -32,19 +32,19 @@ class CropState:
     resize_handle: Optional[str] = None
 
 class VideoCropTool:
-    HANDLE_SIZE = 6  # Smaller handles for minimal look
+    HANDLE_SIZE = 6 
     HANDLE_SENSITIVITY = 10
-    WINDOW_WIDTH = 400   # Reduced from 500
-    WINDOW_HEIGHT = 300  # Reduced from 600
+    WINDOW_WIDTH = 400 
+    WINDOW_HEIGHT = 300  
     
 
-    BG_COLOR = "#000000"        # Pure black background
-    SECONDARY_BG = "#000000"    # Keep everything black
-    TEXT_COLOR = "#33FF33"      # Terminal green
-    ACCENT_COLOR = "#00FF00"    # Brighter green for highlights
-    BUTTON_BG = "#000000"       # Black button
-    BUTTON_HOVER_BG = "#003300" # Dark green hover
-    BORDER_COLOR = "#33FF33"    # Terminal green border
+    BG_COLOR = "#000000"       
+    SECONDARY_BG = "#000000"    
+    TEXT_COLOR = "#33FF33"     
+    ACCENT_COLOR = "#00FF00"    
+    BUTTON_BG = "#000000"    
+    BUTTON_HOVER_BG = "#003300" 
+    BORDER_COLOR = "#33FF33"  
 
     ASCII_LOGO = r"""                 
   _____ _____ ____   _____
@@ -295,7 +295,7 @@ class VideoCropTool:
                 frame,
                 (x - self.HANDLE_SIZE//2, y - self.HANDLE_SIZE//2),
                 (x + self.HANDLE_SIZE//2, y + self.HANDLE_SIZE//2),
-                (60, 60, 60),  # Slightly lighter gray
+                (60, 60, 60), 
                 -1
             )
 
