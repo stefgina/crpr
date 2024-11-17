@@ -32,20 +32,19 @@ class CropState:
     resize_handle: Optional[str] = None
 
 class VideoCropTool:
-
-    HANDLE_SIZE = 6  
+    HANDLE_SIZE = 6 
     HANDLE_SENSITIVITY = 10
     WINDOW_WIDTH = 400 
-    WINDOW_HEIGHT = 300
+    WINDOW_HEIGHT = 300  
     
 
-    BG_COLOR = "#000000"        # Pure black background
-    SECONDARY_BG = "#000000"    # Keep everything black
-    TEXT_COLOR = "#33FF33"      # Terminal green
-    ACCENT_COLOR = "#00FF00"    # Brighter green for highlights
-    BUTTON_BG = "#000000"       # Black button
-    BUTTON_HOVER_BG = "#003300" # Dark green hover
-    BORDER_COLOR = "#33FF33"    # Terminal green border
+    BG_COLOR = "#000000"       
+    SECONDARY_BG = "#000000"    
+    TEXT_COLOR = "#33FF33"     
+    ACCENT_COLOR = "#00FF00"    
+    BUTTON_BG = "#000000"    
+    BUTTON_HOVER_BG = "#003300" 
+    BORDER_COLOR = "#33FF33"  
 
     ASCII_LOGO = r"""                 
   _____ _____ ____   _____
@@ -296,7 +295,7 @@ class VideoCropTool:
                 frame,
                 (x - self.HANDLE_SIZE//2, y - self.HANDLE_SIZE//2),
                 (x + self.HANDLE_SIZE//2, y + self.HANDLE_SIZE//2),
-                (60, 60, 60),  # Slightly lighter gray
+                (60, 60, 60), 
                 -1
             )
 
@@ -362,7 +361,7 @@ class VideoCropTool:
         ret, frame = cap.read()
         
         if not ret:
-            messagebox.showerror("error", "could not read video file")
+            messagebox.showerror("Error", "Could not read video file")
             return
             
         self.crop_state.frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -373,8 +372,8 @@ class VideoCropTool:
         self.crop_state.frame = frame.copy()
         self.crop_state.original_frame = frame.copy()
         
-        cv2.namedWindow("crpr", cv2.WINDOW_NORMAL)
-        cv2.setMouseCallback("crpr", self.mouse_callback)
+        cv2.namedWindow("Crop Video", cv2.WINDOW_NORMAL)
+        cv2.setMouseCallback("Crop Video", self.mouse_callback)
         
         while True:
             display_frame = self.crop_state.frame.copy()
@@ -421,10 +420,10 @@ class VideoCropTool:
 
     def validate_selection(self):
         if not self.has_valid_selection():
-            messagebox.showerror("error", "select a crop region first")
+            messagebox.showerror("Error", "Please select a crop region first")
             return False
         if not self.check_minimum_size():
-            messagebox.showerror("error", "selection too small. please select a larger region.")
+            messagebox.showerror("Error", "Selection too small. Please select a larger region.")
             return False
         return True
 
@@ -477,9 +476,9 @@ class VideoCropTool:
         roi_info = {
             f"roi crop: ({x1}, {y1}, {w}, {h})\n"
             "--------------------------\n"
-            "position": f"({x1}, {y1})",
-            "dimensions": f"{w} × {h} px",
-            "aspect ratio": f"{w/h:.3f}" if h != 0 else "N/A"
+            "Position": f"({x1}, {y1})",
+            "Dimensions": f"{w} × {h} px",
+            "Aspect Ratio": f"{w/h:.3f}" if h != 0 else "N/A"
         }
         
         try:
